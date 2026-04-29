@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner (System.in);
+        int size=sc.nextInt();
+        int arr[]=new int[size];
+        int i;
+        for(i=0;i<size;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        int pos=sc.nextInt();
+        if(pos>size)
+        {
+            System.out.print("Deletion not possible.");
+        }
+        else
+        {
+            for(i=pos-1;i<size-1;i++)
+            {
+                arr[i]=arr[i+1];
+            }
+            for(i=0;i<size-1;i++)
+            {
+                System.out.print(arr[i]+" ");
+            }
+        }
+    }
+}
